@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form-validation</title>
+    <script>
+        function myData() {
+            
+        
+        var a=document.getElementById("n1").value;
+        var b=document.getElementById("n2").value;
+        var c=document.getElementById("n3").value;
+        var d=document.getElementById("n4").value;
+        if (a==""|| b==""||c==""||d=="") 
+        {
+            alert("all fields are mandatory");
+        return false;    
+        }
+       else if (b.length<10||b.length>10) 
+        {
+            alert("number should be of 10 Digits ! please enter valid number");
+        return false;    
+        }
+        else if(isNaN(b)){
+            alert("only number are allowed ! please enter valid number");
+            return false;
+        }
+        else if(c!=d){
+            alert("please enter same password");
+            return false;
+        }
+        else{
+            true;
+        }
+    }
+    </script>
+</head>
+<body>
+    <form onsubmit="return myData()"action="abc.html">
+        UserId:<input type="text" id="n1"><br><br>
+        contact:<input type="text" id="n2"><br><br>
+        password : <input type="password" id="n3"><br><br>
+         Confirm password : <input type="password" id="n4"><br><br>
+        <input type="submit" value="submit">
+    </form>
+</body>
+</html>
